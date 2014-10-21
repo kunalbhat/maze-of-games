@@ -1,0 +1,60 @@
+body {
+  color: #555;
+  font-family: 'Courier', Helvetica, sans-serif;
+
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+#board {
+  overflow: hidden;
+  padding: 60px;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+.column {
+  float: left;
+  position: relative;
+}
+
+li, .count, .arrow {
+  display: block;
+  height: 28px;
+  line-height: 36px;
+  list-style-type: none;
+  text-align: center;
+  width: 28px;
+}
+
+.count { color: #777; }
+
+.arrow {
+  background: #fafafa;
+  cursor: pointer;
+}
+
+.arrow:hover { background: #ccc; }
+
+.arrow.up {
+  position: absolute;
+  top: -32px;
+}
+
+.arrow.down {
+  line-height: 36px;
+
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
