@@ -52,8 +52,8 @@ var setupBoard = function() {
     }
 
     if (i != 0) {
-      $col.append('<span class="arrow up">^</span>')
-        .append('<span class="arrow down">^</span>')
+      $col.append('<span class="arrow up" data-dir="1">^</span>')
+        .append('<span class="arrow down" data-dir="0">^</span>')
         .append('<span class="count">0</span>');
     }
   }
@@ -91,12 +91,8 @@ setupBoard();
 // Click events
 $('.arrow').on('click', function() {
   $this = $(this);
-  direction = 0;
+  direction = $this.data('dir');
   key = $this.parent().data('id');
-
-  if($this.hasClass('up')) {
-    direction = 1;
-  }
 
   shift(direction, key);
   updateCount(direction, key);
