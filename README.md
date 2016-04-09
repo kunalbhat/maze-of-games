@@ -34,7 +34,7 @@ complete.
 
 A screenshot of the interface is below, and you can clone the repo to run it locally. Enjoy!
 
-![Maze of Games - Puzzle 1 UI](https://dl.dropboxusercontent.com/u/7583033/mog_puzzle_1.png)
+![Maze of Games - Puzzle 1 UI](https://raw.githubusercontent.com/kunalbhat/maze-of-games/master/puzzle_1/screenshots/puzzle_1_interface.png)
 
 ---
 
