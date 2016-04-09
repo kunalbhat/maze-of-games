@@ -89,17 +89,15 @@ var updateCount = function(direction, key) {
 setupBoard();
 
 // Click events
-$('.arrow.up').on('click', function() {
-  key = $(this).parent().data('id');
-  direction = 1;
-  shift(direction, key);
-  updateCount(direction, key);
-});
-
-$('.arrow.down').on('click', function() {
-  key = $(this).parent().data('id');
+$('.arrow').on('click', function() {
+  $this = $(this);
   direction = 0;
+  key = $this.parent().data('id');
+
+  if($this.hasClass('up')) {
+    direction = 1;
+  }
+
   shift(direction, key);
   updateCount(direction, key);
 });
-
