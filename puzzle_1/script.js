@@ -1,6 +1,8 @@
 var col1, col2, col3, col4, col5, col6, col7,
 col8, col9, col10, col11, col12, col13 = [];
 
+var turn, shift, setupBoard, updateCount;
+
 var columns = [
   col1  = ['T', 'W', 'T', 'M', 'A', 'C', 'T', 'N', 'W', 'B', 'T', 'O', 'F'],
   col2  = ['U', 'O', 'N', 'I', 'H', 'E', 'H', 'O', 'N', 'A', 'H', 'A', 'I'],
@@ -17,7 +19,7 @@ var columns = [
   col13 = ['S', 'G', 'R', 'U', 'S', 'D', 'N', 'S', 'T', 'W', 'R', 'O', 'H']
 ];
 
-var turn = function(key) {
+turn = function(key) {
   $('#col' + key + ' ul').html('');
 
   for (i=0; i<columns[key].length; i++) {
@@ -25,7 +27,7 @@ var turn = function(key) {
   }
 }
 
-var shift = function(direction, key) {
+shift = function(direction, key) {
 
   if (direction === 0) {
     l = columns[key].shift();
@@ -40,7 +42,7 @@ var shift = function(direction, key) {
   turn(key);
 }
 
-var setupBoard = function() {
+setupBoard = function() {
   for(i=0; i<columns.length; i++) {
     $('#board').append("<div id='col" + i + "' class='column' data-id='" + i + "'><ul></ul></div>");
 
@@ -59,7 +61,7 @@ var setupBoard = function() {
   }
 }
 
-var updateCount = function(direction, key) {
+updateCount = function(direction, key) {
   $count = $('#col' + key + ' .count');
   count = parseInt($count.html());
   columnLength = columns[key].length;
